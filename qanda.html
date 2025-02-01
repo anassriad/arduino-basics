@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arduino & C/C++ Q&A & Test</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file if needed -->
+  <script>
+    // This function calculates the test score when the form is submitted.
+    function calculateScore() {
+      var score = 0;
+      
+      // For each question, we check if the correct radio button is checked.
+      if(document.getElementById("q1a").checked) { score++; } // Q1: setup() runs once at the start.
+      if(document.getElementById("q2c").checked) { score++; } // Q2: Both Serial.print() and Serial.println() can be used.
+      if(document.getElementById("q3b").checked) { score++; } // Q3: pinMode() configures a pin as INPUT or OUTPUT.
+      if(document.getElementById("q4a").checked) { score++; } // Q4: int is used for whole numbers.
+      if(document.getElementById("q5b").checked) { score++; } // Q5: Serial.begin() starts serial communication.
+      if(document.getElementById("q6a").checked) { score++; } // Q6: A comment is text ignored by the compiler.
+      if(document.getElementById("q7c").checked) { score++; } // Q7: '//' is used for single-line comments.
+      if(document.getElementById("q8b").checked) { score++; } // Q8: #define is used to define constants.
+      if(document.getElementById("q9a").checked) { score++; } // Q9: loop() is the main loop.
+      if(document.getElementById("q10c").checked) { score++; } // Q10: delay(1000) delays for one second.
+      if(document.getElementById("q11a").checked) { score++; } // Q11: "int myNumber = 5;" is valid.
+      if(document.getElementById("q12b").checked) { score++; } // Q12: setup() initializes settings and runs once.
+      if(document.getElementById("q13c").checked) { score++; } // Q13: "// This is a comment" is correct.
+      if(document.getElementById("q14a").checked) { score++; } // Q14: '==' compares equality.
+      if(document.getElementById("q15b").checked) { score++; } // Q15: Serial.println prints with a newline.
+
+      var total = 15;
+      var percentage = (score / total) * 100;
+      document.getElementById("result").innerText = "You scored " + score + " out of " + total + " (" + percentage.toFixed(2) + "%)";
+      
+      return false; // Prevent form submission so the page doesn't reload.
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Arduino & C/C++ Q&A & Test</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qanda.html">Q&amp;A & Test</a></li>
+        <li><a href="cplusplus.html">C/C++ Basics</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="quiz">
+      <h2>Test Your Knowledge!</h2>
+      <form onsubmit="return calculateScore();">
+        <!-- Question 1 -->
+        <div>
+          <p>1. Which function runs once at the start of an Arduino program?</p>
+          <label><input type="radio" name="q1" id="q1a" value="setup"> setup()</label><br>
+          <label><input type="radio" name="q1" id="q1b" value="loop"> loop()</label>
+        </div>
+        
+        <!-- Question 2 -->
+        <div>
+          <p>2. Which command is used to print a message to the Serial Monitor?</p>
+          <label><input type="radio" name="q2" id="q2a" value="print"> Serial.print()</label><br>
+          <label><input type="radio" name="q2" id="q2b" value="println"> Serial.println()</label><br>
+          <label><input type="radio" name="q2" id="q2c" value="both"> Both can be used</label>
+        </div>
+        
+        <!-- Question 3 -->
+        <div>
+          <p>3. What does <code>pinMode()</code> do in Arduino?</p>
+          <label><input type="radio" name="q3" id="q3a" value="assign"> It assigns a pin number.</label><br>
+          <label><input type="radio" name="q3" id="q3b" value="configure"> It configures a pin as INPUT or OUTPUT.</label>
+        </div>
+        
+        <!-- Question 4 -->
+        <div>
+          <p>4. Which data type is used for whole numbers in Arduino?</p>
+          <label><input type="radio" name="q4" id="q4a" value="int"> int</label><br>
+          <label><input type="radio" name="q4" id="q4b" value="float"> float</label>
+        </div>
+        
+        <!-- Question 5 -->
+        <div>
+          <p>5. Which function initializes serial communication in Arduino?</p>
+          <label><input type="radio" name="q5" id="q5a" value="Serial.print"> Serial.print()</label><br>
+          <label><input type="radio" name="q5" id="q5b" value="Serial.begin"> Serial.begin()</label>
+        </div>
+        
+        <!-- Question 6 (C/C++ comment) -->
+        <div>
+          <p>6. In C/C++, what is a comment?</p>
+          <label><input type="radio" name="q6" id="q6a" value="explanation"> A piece of text ignored by the compiler.</label><br>
+          <label><input type="radio" name="q6" id="q6b" value="error"> A mistake in the code.</label>
+        </div>
+        
+        <!-- Question 7 (C/C++ comment syntax) -->
+        <div>
+          <p>7. Which symbol is used for single-line comments in C/C++?</p>
+          <label><input type="radio" name="q7" id="q7a" value="hash"> #</label><br>
+          <label><input type="radio" name="q7" id="q7b" value="slash_star"> /*</label><br>
+          <label><input type="radio" name="q7" id="q7c" value="double_slash"> //</label>
+        </div>
+        
+        <!-- Question 8 (Preprocessor directives) -->
+        <div>
+          <p>8. Which preprocessor directive is used to define constants in C/C++?</p>
+          <label><input type="radio" name="q8" id="q8a" value="include"> #include</label><br>
+          <label><input type="radio" name="q8" id="q8b" value="define"> #define</label>
+        </div>
+        
+        <!-- Question 9 -->
+        <div>
+          <p>9. Which function is used to run the main loop in an Arduino sketch?</p>
+          <label><input type="radio" name="q9" id="q9a" value="loop"> loop()</label><br>
+          <label><input type="radio" name="q9" id="q9b" value="setup"> setup()</label>
+        </div>
+        
+        <!-- Question 10 -->
+        <div>
+          <p>10. What does the function <code>delay(1000)</code> do in an Arduino sketch?</p>
+          <label><input type="radio" name="q10" id="q10a" value="no_delay"> It does nothing.</label><br>
+          <label><input type="radio" name="q10" id="q10b" value="ms"> Delays for 1000 milliseconds.</label><br>
+          <label><input type="radio" name="q10" id="q10c" value="one_second"> Delays for one second.</label>
+        </div>
+        
+        <!-- Question 11 (C/C++ variable declaration) -->
+        <div>
+          <p>11. Which of the following is a valid variable declaration in C/C++?</p>
+          <label><input type="radio" name="q11" id="q11a" value="int_declaration"> int myNumber = 5;</label><br>
+          <label><input type="radio" name="q11" id="q11b" value="invalid"> number myNumber = 5;</label>
+        </div>
+        
+        <!-- Question 12 (Purpose of setup()) -->
+        <div>
+          <p>12. What is the purpose of the <code>setup()</code> function in an Arduino sketch?</p>
+          <label><input type="radio" name="q12" id="q12a" value="loop"> It runs repeatedly.</label><br>
+          <label><input type="radio" name="q12" id="q12b" value="init"> It initializes settings and runs once at startup.</label>
+        </div>
+        
+        <!-- Question 13 (Correct comment syntax) -->
+        <div>
+          <p>13. Which of the following is a correct comment in C/C++?</p>
+          <label><input type="radio" name="q13" id="q13a" value="wrong"> // This is a comment //</label><br>
+          <label><input type="radio" name="q13" id="q13b" value="wrong2"> <!-- This is a comment --></label><br>
+          <label><input type="radio" name="q13" id="q13c" value="correct"> // This is a comment</label>
+        </div>
+        
+        <!-- Question 14 (Equality operator) -->
+        <div>
+          <p>14. Which operator is used to compare equality in C/C++?</p>
+          <label><input type="radio" name="q14" id="q14a" value="double_equal"> ==</label><br>
+          <label><input type="radio" name="q14" id="q14b" value="single_equal"> =</label>
+        </div>
+        
+        <!-- Question 15 (Serial.println output) -->
+        <div>
+          <p>15. What is the output of <code>Serial.println("Hello");</code> in Arduino?</p>
+          <label><input type="radio" name="q15" id="q15a" value="no_newline"> Hello (without a newline)</label><br>
+          <label><input type="radio" name="q15" id="q15b" value="newline"> Hello followed by a newline</label>
+        </div>
+        
+        <button type="submit">Submit Test</button>
+      </form>
+      <p id="result"></p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Basics of Arduino. All rights reserved.</p>
+  </footer>
+</body>
+</html>

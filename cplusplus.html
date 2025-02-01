@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C/C++ Basics for Arduino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>C/C++ Basics for Arduino</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qanda.html">Q&amp;A & Test</a></li>
+        <li><a href="cplusplus.html">C/C++ Basics</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Introduction to C/C++</h2>
+      <p>Arduino sketches are written in a simplified version of C/C++. Understanding some basic concepts of C/C++ will help you write better Arduino code.</p>
+    </section>
+
+    <section id="basics">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Variables and Data Types:</strong> Learn about <code>int</code>, <code>float</code>, <code>char</code>, <code>boolean</code>, and <code>String</code>.</li>
+        <li><strong>Functions:</strong> Functions let you organize your code into reusable blocks. Every Arduino sketch has <code>setup()</code> and <code>loop()</code> functions.</li>
+        <li><strong>Control Structures:</strong> Use <code>if-else</code> statements and loops (<code>for</code>, <code>while</code>) to control the flow of your program.</li>
+        <li><strong>Preprocessor Directives:</strong> Learn about <code>#define</code> for creating constant values that can be used throughout your code.</li>
+        <li><strong>Comments:</strong> Use <code>//</code> for single-line comments and <code>/* ... */</code> for multi-line comments.</li>
+      </ul>
+    </section>
+
+    <section id="example">
+      <h2>Example Code</h2>
+      <pre>
+#include &lt;Arduino.h&gt;
+
+// Define constants
+#define LED_PIN 13
+
+void setup() {
+  // Initialize the LED pin as output
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  // Blink the LED
+  digitalWrite(LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_PIN, LOW);
+  delay(1000);
+}
+      </pre>
+      <p>This simple example blinks an LED connected to pin 13. Notice how the structure of the code follows the C/C++ style with functions and preprocessor directives.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Basics of Arduino. All rights reserved.</p>
+  </footer>
+</body>
+</html>
